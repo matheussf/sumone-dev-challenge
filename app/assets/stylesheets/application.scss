@@ -11,6 +11,55 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require gritter
  *= require_tree .
  *= require_self
  */
+ 
+ .bubble {
+    position: fixed;
+    left: 80px;
+    top: 46%;
+    bottom: 0;
+    width: 270px;
+    height: 80px;
+    padding: 0px;
+    background: #0b0b0b;
+    opacity: 0.85;
+    z-index: 9999;
+    color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.bubble.close {
+    display: none;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 22px 15px 0;
+    border-color: transparent #0b0b0b;
+    display: block;
+    width: 0;
+    z-index: 9999;
+    left: -22px;
+    top: 25px;
+}
+
+.bubble .text {
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.bubble h4 {
+    font-size: 15px;
+}
+
+.bubble p {
+    font-size: 11px;
+    line-height: 1.8em;
+}

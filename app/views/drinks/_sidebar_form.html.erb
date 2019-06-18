@@ -1,0 +1,50 @@
+<div id="menu">
+    <nav id="sidebar" class="active">
+        <!-- Form -->
+        <div class="container">
+            <%= form_with(model: @drink, url: users_path, remote: true, method: "put") do |form| %>
+                <div class="form-group">
+                    <%= form.label :temperature, "Temperature" %>
+                    <%= form.collection_select :temperature, Drink.temperatures.keys.map{ |temp| [temp, temp.humanize] }, :first, :second,
+                        {:include_blank => 'Select a temperature'}, {:class=>"form-control"}  %>
+                </div>
+              
+                <div class="form-group">
+                  <%= form.label :base_ingredient, "Base Ingredient" %>
+                  <%= form.collection_select :base_ingredient, Drink.base_ingredients.keys.map{ |base| [base, base.humanize] }, :first, :second,
+                      {:include_blank => 'Select a ingredient'}, {:class => "form-control"}  %>
+                </div>
+                
+                <div class="custom-control custom-checkbox">
+                    <%= form.check_box :distilled, {class: "custom-control-input", id: "distilled", multiple: false}, 1%>
+                    <%= form.label :distilled, class: "custom-control-label", for: "distilled" %>
+                </div>
+                
+                <div class="form-group">
+                    <label id="lblAlchool" for="alcoholLevel">Alchool Level 
+                        <span id="alcoholLevelValLabel"><span id="alcoholLevelVal">0</span>%</span>
+                    </label>
+                    <span>
+                        <%= form.range_field :alcoholLevel, { "data-slider-min": 0, "data-slider-max": 60, "data-slider-id": "alchoolLevelSlider", 
+                        type: "text", min: 0, max: 60, class: "form-control", id: "alcoholLevel" }%>
+                    </span>
+                </div>
+                <%= form.submit :submit, class: 'btn btn-success', id: "submit__button" %>
+            <% end %>
+        </div>
+        <!--End Form-->
+    </nav>
+    <!-- Sidebar button -->
+    <div class="sidebar-form__button">
+        <div class="menu__button">
+            <div class="bit-1"></div>
+            <div class="bit-2"></div>
+            <div class="bit-3"></div>
+        </div>
+    </div>
+    <!-- End button -->
+</div>
+<!-- End Sidebar -->
+
+
+
