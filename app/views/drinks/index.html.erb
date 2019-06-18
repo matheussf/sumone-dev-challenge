@@ -1,9 +1,15 @@
-<div id="wrapper">
-  <%= render :partial => "shared/header" %>
+<div class="wrapper">
+  <div class="main-content">
+    <%= render :partial => "shared/header" %>
+    
+    <%= render :partial => "search_form" %>
+    
+    <div class="drinks-list">
+      <%= render :partial => "drinks_list" %>
+    </div>
+  </div>
   
-  <%= render :partial => "search_form" %>
-  
-  <div class="drinks-list">
-    <%= render :partial => "drinks_list" %>
+  <div class="sidebar-form">
+    <%= render :partial => "sidebar_form" %>
   </div>
 </div>

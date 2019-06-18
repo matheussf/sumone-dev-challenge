@@ -80,6 +80,7 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gritter (1.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
@@ -249,6 +250,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   factory_bot_rails (~> 4.8.2)
+  gritter
   jbuilder (~> 2.5)
   kaminari
   listen (>= 3.0.5, < 3.2)

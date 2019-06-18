@@ -12,21 +12,43 @@
 //
 //= require jquery
 //= require bootstrap
+//= require gritter
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
 
-function ready(event) {
-  $('input[type=radio][name=searchRadio]').change(function() {
-    if (this.value === 'simple') {
-      $('.simple-form').show();
-      $('.advanced-form').hide();
-    }
-    else if (this.value === 'advanced') {
-      $('.simple-form').hide();
-      $('.advanced-form').show();
-    }
-  });
-}
+
 
 $(document).on('turbolinks:load', ready);
+$(document).on("turbolinks:load", function() {
+    var slider = new Slider("#alcoholLevel");    
+    var menuButton = document.querySelector('.menu__button');
+    var menu = document.querySelector('#sidebar');
+    var notificationMenu = document.querySelector(".bubble");
+    var btnSubmit = document.querySelector('#submit__button');
+    
+    slider.on("slide", function(sliderValue) {
+        document.getElementById("alcoholLevelVal").textContent = sliderValue;
+    });
+    
+    menuButton.addEventListener('click', function () {
+        menuButton.classList.toggle('open');
+        menu.classList.toggle('active')
+        notificationMenu.classList.add('close');
+    })
+    
+    $.extend($.gritter.options, { 
+        position: 'top-left',
+        fade_in_speed: 'medium',
+        fade_out_speed: 2000,
+    });
+    
+    setTimeout(() => {
+        notificationMenu.classList.add('close');
+    }, 5000);
+    
+    btnSubmit.addEventListener('click', () =>{
+        menuButton.classList.toggle('open');
+        menu.classList.toggle('active')
+    });
+});

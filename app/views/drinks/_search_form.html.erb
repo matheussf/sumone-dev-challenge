@@ -12,16 +12,12 @@
 
   <%= form_tag do %>
     <div class="simple-form">
-      <div class="simple-form__input">
-        <input class="form-control form-control-lg" type="text" placeholder="Try a Martini..">
-      </div>
-      <div class="simple-form__btn">
-        <button type="submit" class="btn btn-outline-primary btn-lg">Search</button>
-      </div>
+      <%= form_tag(search_path, method: "get", remote: true) do %>
+        <%= text_field_tag :params, params[:search], placeholder: "Try a Martini..", class: "simple-form__input form-control form-control-lg", type: "text" %>
+      <% end %>
     </div>
-
+    
     <div class="advanced-form" style="display:none;">
-      User inputs to search a collection of drinks based on given recommendations.
     </div>
   <% end %>
 </div>

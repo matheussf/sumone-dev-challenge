@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :drink do
-    name 'Drink A'
+    name 'Americano'
     image_url 'https://example.com/image.jpg'
     description 'A drink that has a lot of water'
     rating_avg 1
