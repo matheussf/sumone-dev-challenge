@@ -1,9 +1,14 @@
+# frozen_string_literal: true
+
 class Drink < ApplicationRecord
   validates :name, :description, :image_url, presence: true
   validates :rating_avg, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
   validates :alcohol_level, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
   # Bitterness level
   validates :ibu, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }
+
+  paginates_per 10
+  default_scope -> { order('name') }
 
   enum temperature: %i[
     hot

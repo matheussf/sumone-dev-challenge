@@ -115,7 +115,7 @@ Drink.create(
 Drink.create(
   name: 'Tequila Sunrise',
   description: "The Tequila Sunrise is a cocktail made of tequila, orange juice, and grenadine syrup and served unmixed in a tall glass. The modern drink originates from Sausalito in the early 1970s, after an earlier one created in the 1930s in Phoenix, near Scottsdale. The cocktail is named for its appearance when served, with gradations of color resembling a sunrise.",
-  image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Tequila_Sunrise_garnished_with_orange_and_cherry_-_Evan_Swigart.jpg/220px-Tequila_Sunrise_garnished_with_orange_and_cherry_-_Evan_Swigart.jpg',
+  image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Tequila_Sunrise_glass.jpg/200px-Tequila_Sunrise_glass.jpg',
   alcohol_level: 30,
   distilled: true,
   temperature: :cold,

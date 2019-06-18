@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - config/**/*
+    - node_modules/**/*
+    - bin/**/*
+    - db/**/*
+    
+Style/Documentation:
+  Enabled: false
+    
+# Customized rules
+Metrics/LineLength:
+  Max: 105
+
+MethodLength:
+  Max: 35
+
+Metrics/AbcSize:
+   Enabled: false
+
+BlockLength:
+  Max: 70
