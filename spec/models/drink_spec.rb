@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Drink do
@@ -12,5 +14,6 @@ describe Drink do
     it { expect { drink.rating_avg = 6 }.to change { drink.valid? }.from(true).to(false) }
     it { expect { drink.alcohol_level = -1 }.to change { drink.valid? }.from(true).to(false) }
     it { expect { drink.ibu = 11 }.to change { drink.valid? }.from(true).to(false) }
+    it { expect { drink.per_page = 10 }.to change { drink.valid? }.from(true).to(false) }
   end
 end

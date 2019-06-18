@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DrinksController < ApplicationController
   def index
-    @drinks = Drink.all.order(:created_at)
+    @drinks = Drink.page(params[:page])
   end
 end

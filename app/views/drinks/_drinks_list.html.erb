@@ -1,0 +1,16 @@
+<%= paginate @drinks, :remote => true %>
+
+<ul class="list-group">
+  <% @drinks.each do |drink| %>
+    <li class="list-group-item justify-content-between">
+      <div class="drink-card">
+        <%= image_tag drink.image_url, class: 'drink-card__img' %>
+        <div class="drink-card__body">
+          <h2><%= drink.name %></h2>
+          <p><%= drink.description %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= paginate @drinks, :remote => true %>
